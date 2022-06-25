@@ -1,16 +1,27 @@
 import React from 'react';
 import Lottie from 'lottie-react-native';
+import {CommonActions, useNavigation} from '@react-navigation/native';
 import {FullScreen, InlineContainer, Button} from '@components/atoms';
 import {lotties} from '@assets/lottie';
 import * as S from './styles';
 
 const ResizeLottie = () => {
+  const navigation = useNavigation();
+
   const moveToStackOne = () => {
-    console.log('moveToStackOne');
+    navigation.dispatch(
+      CommonActions.navigate({
+        name: 'ChartList',
+      }),
+    );
   };
 
   const moveToStackTwo = () => {
-    console.log('moveToStackTwo');
+    navigation.dispatch(
+      CommonActions.navigate({
+        name: 'TagList',
+      }),
+    );
   };
 
   return (
